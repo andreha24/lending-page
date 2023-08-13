@@ -1,5 +1,70 @@
-.check-status-btn{
-  color: red;
-  padding: 7px;
+@use '/src/App';
 
+@mixin theme-btn($color, $padding, $background, $border){
+  color: $color;
+  padding: $padding;
+  background: $background;
+  border-radius: 20px;
+  border: $border;
+  transition: background 0.4s, filter 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    transition: 0.4s;
+    filter: brightness(1.5);
+    background: rgb(211 211 211 / 13%);
+  }
+}
+
+@mixin read-more-theme($color, $url){
+  background-color: transparent;
+  border: 0;
+  color: $color;
+  margin: App.$padding-into-block;
+  position: relative;
+  cursor: pointer;
+
+  &:after{
+    content: "";
+    position: absolute;
+    background-image: $url;
+    width: 30px;
+    height: 30px;
+    top: -2px;
+    right: -35px;
+    transition: right 0.5s;
+  }
+
+  &:hover:after{
+    right: -50px;
+  }
+}
+
+.check-status-btn {
+  @include theme-btn(App.$ocean-color, 15px, rgba(211, 211, 211, 0.16), 1px solid rgb(211 211 211 / 22%));
+}
+
+.get-vaccine-btn{
+  @include theme-btn(white, 15px, App.$ocean-color, 1px solid rgb(211 211 211 / 22%));
+  text-shadow: 2px 2px 1px #10101070;
+}
+
+.help-btn{
+  @include theme-btn(white, 15px, rgba(211, 211, 211, 0.16), 2px solid App.$ocean-color);
+}
+
+.reg-btn{
+  @include theme-btn(white, 15px 25px, App.$ocean-color, 1px solid rgb(211 211 211 / 22%));
+}
+
+.check-vaccine-btn{
+  @include theme-btn(App.$ocean-color, 15px 35px, rgba(211, 211, 211, 0.16), 2px solid App.$ocean-color);
+}
+
+.read-more-btn-blue{
+  @include read-more-theme(App.$ocean-color,  url("../../assets/ocean-arrow-right.png"));
+}
+
+.read-more-btn-grey{
+  @include read-more-theme(App.$grey-color,  url("../../assets/arrow-right-grey.png"));
 }
