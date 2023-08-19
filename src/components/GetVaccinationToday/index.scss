@@ -1,0 +1,83 @@
+@import "src/styles/variables";
+
+.get-vaccine-today-container{
+  padding:$padding-middle-block;
+
+  .vaccine-today-wrapper{
+    margin:$margin-middle-block;
+    display: flex;
+    justify-content: space-between;
+
+    .vaccine-today-form-wrapper{
+      width: 45%;
+
+      .vaccination-today-intro{
+        font-size: 45px;
+        font-weight: bold;
+      }
+
+      form{
+        .reg-today-input{
+          margin: 25px 0;
+
+          label{
+            font-weight: bold;
+          }
+
+          input{
+            margin: 1rem 0;
+            width: 100%;
+            padding: 15px;
+            border-radius: 15px;
+            border: 0;
+            background-color:$grey-color;
+            outline: none;
+            color:$ocean-color;
+          }
+
+          &:nth-child(2){
+            display: flex;
+            flex-direction: column;
+
+            span{
+              margin-top: 1rem;
+              color: grey;
+            }
+          }
+        }
+      }
+
+      .already-check{
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 20px;
+
+        span{
+          color:grey;
+        }
+
+        a{
+          cursor: pointer;
+          color:$ocean-color;
+          transition: 0.5s color;
+
+          &:hover{
+            color: rgb(21, 166, 202);
+          }
+        }
+      }
+    }
+  }
+}
+
+.PhoneInputCountry{
+  width: 10%;
+}
+.PhoneInputCountryIcon > svg{
+  width: 30px;
+  height: 30px;
+}
+.PhoneInputCountrySelectArrow{
+  width: 10px;
+  height: 10px;
+}

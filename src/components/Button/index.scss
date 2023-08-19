@@ -1,6 +1,6 @@
-@use '/src/App';
+@use '/src/styles/variables';
 
-@mixin theme-btn($color, $padding, $background, $border){
+@mixin theme-btn($color, $padding, $background, $border, $hover-bg: rgb(211 211 211 / 13%)){
   color: $color;
   padding: $padding;
   background: $background;
@@ -12,7 +12,7 @@
     cursor: pointer;
     transition: 0.4s;
     filter: brightness(1.5);
-    background: rgb(211 211 211 / 13%);
+    background: $hover-bg;
   }
 }
 
@@ -20,7 +20,7 @@
   background-color: transparent;
   border: 0;
   color: $color;
-  margin: App.$padding-into-block;
+  margin: 1.5rem 0;
   position: relative;
   cursor: pointer;
 
@@ -40,31 +40,32 @@
   }
 }
 
-.check-status-btn {
-  @include theme-btn(App.$ocean-color, 15px, rgba(211, 211, 211, 0.16), 1px solid rgb(211 211 211 / 22%));
-}
-
 .get-vaccine-btn{
-  @include theme-btn(white, 15px, App.$ocean-color, 1px solid rgb(211 211 211 / 22%));
+  @include theme-btn(white, 15px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
   text-shadow: 2px 2px 1px #10101070;
 }
 
 .help-btn{
-  @include theme-btn(white, 15px, rgba(211, 211, 211, 0.16), 2px solid App.$ocean-color);
+  @include theme-btn(white, 15px, rgba(211, 211, 211, 0.16), 2px solid variables.$ocean-color);
 }
 
 .reg-btn{
-  @include theme-btn(white, 15px 25px, App.$ocean-color, 1px solid rgb(211 211 211 / 22%));
+  @include theme-btn(white, 15px 25px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
 }
 
 .check-vaccine-btn{
-  @include theme-btn(App.$ocean-color, 15px 35px, rgba(211, 211, 211, 0.16), 2px solid App.$ocean-color);
+  @include theme-btn(variables.$ocean-color, 15px 35px, rgba(211, 211, 211, 0.16), 2px solid variables.$ocean-color);
 }
 
 .read-more-btn-blue{
-  @include read-more-theme(App.$ocean-color,  url("../../assets/ocean-arrow-right.png"));
+  @include read-more-theme(variables.$ocean-color,  url("../../assets/arrows/ocean-arrow-right.png"));
 }
 
 .read-more-btn-grey{
-  @include read-more-theme(App.$grey-color,  url("../../assets/arrow-right-grey.png"));
+  @include read-more-theme(variables.$grey-color,  url("../../assets/arrows/arrow-right-grey.png"));
+}
+
+.reg-today-btn{
+  @include theme-btn(white, 15px 25px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%), rgb(21 166 202));
+  width: 100%;
 }

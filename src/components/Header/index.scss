@@ -1,0 +1,73 @@
+@import "src/styles/variables";
+@import "src/components/Button/index";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-middle-block;
+  margin: 0 3rem;
+  position: relative;
+
+  .burger-menu-wrap{
+    display: none;
+  }
+
+  svg{
+    display: none;
+  }
+}
+
+.check-status-btn {
+  @include theme-btn($ocean-color, 15px, rgba(211, 211, 211, 0.16), 1px solid rgb(211 211 211 / 22%));
+}
+
+@media screen and (max-width: 1250px) {
+  header{
+    padding: 0;
+    margin: 0;
+
+    .navigation-block{
+      width: 100%;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      flex-direction: column;
+      align-items: center;
+      background-color: #000;
+    }
+
+    button{
+      display: none;
+    }
+
+    svg{
+      display: block;
+      transition: opacity 0.3s;
+
+      &:hover{
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .burger-menu-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .burger-menu-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .burger-menu-exit {
+    opacity: 1;
+  }
+  .burger-menu-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }
+}

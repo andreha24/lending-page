@@ -1,0 +1,35 @@
+@import "src/styles/variables";
+.navigation-block {
+  display: flex;
+  list-style-type: none;
+  width: 40%;
+  justify-content: space-between;
+
+  li {
+    display: block;
+    position: relative;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: $grey-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background-color: $ocean-color;
+      opacity: 0;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      transition: color 0.4s, opacity 0.4s;
+    }
+
+    &:hover, &:hover::after {
+      opacity: 1;
+      color: white;
+    }
+  }
+}

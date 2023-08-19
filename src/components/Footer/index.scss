@@ -1,0 +1,21 @@
+@import "src/styles/variables";
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rem 4rem 3rem 4rem;
+  background-image:$bg-image;
+  width: 100%;
+  background-size: cover;
+
+  .social-media{
+      img{
+        cursor: pointer;
+        margin: 0 10px;
+      }
+    //width: 20%;
+    //display: flex;
+    //justify-content: space-between;
+  }
+}

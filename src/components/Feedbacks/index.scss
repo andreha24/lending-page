@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+.feedbacks-container{
+  background-image: url("../../assets/jarms.png");
+  background-size: auto;
+  background-position: center;
+  padding: $padding-middle-block $padding-middle-block 10rem;
+  position: relative;
+
+  .feedback-intro{
+    text-align: center;
+    padding:$padding-middle-block;
+    margin:$margin-middle-block;
+
+    .feedback-name{
+      color:$ocean-color;
+      font-weight: bold;
+    }
+
+    div, h2{
+      padding:$padding-into-block;
+    }
+
+    div{
+      display: flex;
+      flex-direction: column;
+      color:grey;
+    }
+
+    h2 {
+      font-size: 45px;
+    }
+  }
+}
+
+.quote-wrapper{
+  position: absolute;
+  bottom: -115px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: rgba(211, 211, 211, 0.15);
+  color:$main-text-color;
+
+
+  .quote-container{
+    background-color: rgb(23, 194, 236);
+  }
+}

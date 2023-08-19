@@ -1,0 +1,41 @@
+@import "src/styles/variables";
+
+.symptoms-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-size: cover;
+  color: white;
+  padding-top: 3rem;
+  background-image:$bg-image;
+
+  .symptoms-intro{
+    text-align: center;
+    padding:$padding-middle-block;
+    margin:$margin-middle-block;
+
+    div, h2{
+      padding:$padding-into-block;
+    }
+
+    div{
+      display: flex;
+      flex-direction: column;
+      color:$grey-color;
+    }
+
+    h2{
+      font-size: 45px;
+
+      span{
+        font-size: 45px;
+        color:$ocean-color;
+      }
+    }
+  }
+
+  img{
+    padding:0 2rem;
+    margin-top: 4rem;
+  }
+}

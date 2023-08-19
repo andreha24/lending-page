@@ -1,0 +1,13 @@
+.go-top-btn {
+  position: fixed;
+  top: 50%;
+  right: 5px;
+  transition: 0.5s top, 0.5s opacity;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    top: 49%;
+  }
+}

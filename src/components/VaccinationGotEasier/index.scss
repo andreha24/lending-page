@@ -1,0 +1,166 @@
+@import "src/styles/variables";
+
+.introduction {
+  background-image: $bg-image;
+  width: 100%;
+  color: $main-text-color;
+  background-size: cover;
+
+  .logo-block {
+    position: relative;
+    cursor: pointer;
+    padding: 8px 0;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: $ocean-color;
+      transition: width .5s;
+    }
+
+    &:hover:after{
+      width: 100%;
+    }
+  }
+}
+
+.introduction-info-container{
+  padding: $padding-middle-block;
+  margin: $margin-middle-block;
+  display: flex;
+  justify-content: space-between;
+  $width: 45%;
+
+  .introduction-info{
+    width: $width;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    span:first-child{
+      color: $ocean-color;
+    }
+
+    .introduction-phrase{
+      h1, span{
+        font-size: 2rem;
+      }
+
+      span{
+        color: $ocean-color;
+      }
+    }
+
+    .introduction-info-help{
+      color: $grey-color;
+    }
+
+    .introduction-btns{
+      display: flex;
+      justify-content: flex-start;
+
+      button:first-child{
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .vaccine-block{
+    position: relative;
+    width: $width;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background-image: url("assets/vaccine-container.png");
+
+    .vaccine-viruses{
+      position: absolute;
+      width: 110%;
+      justify-content: space-between;
+      display: flex;
+    }
+
+    .doctors{
+      position: absolute;
+      left: -35px;
+      bottom: -35px;
+      display: flex;
+      background: rgba(211, 211, 211, 0.16);
+      padding: 1rem;
+      border-radius: 20px;
+
+      div{
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+        justify-content: space-evenly;
+
+        span:last-child{
+          color: $ocean-color;
+        }
+      }
+    }
+  }
+}
+
+
+.schedule-container{
+  padding: $padding-middle-block;
+  margin: $margin-middle-block;
+
+  img{
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: $img-bg-color;
+  }
+
+  .schedule-introduction{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    span{
+      padding-left: 1rem;
+    }
+  }
+
+  .schedule-reg{
+    background: $img-bg-color;
+    padding: $padding-into-block;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+
+    .schedule-reg-form{
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+
+      .schedule-reg-block{
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+
+        div{
+          display: flex;
+          flex-direction: column;
+          padding: 0 15px;
+          color:$grey-color;
+
+          input{
+            margin-top: 5px;
+            background: transparent;
+            border: 1px solid rgba(211, 211, 211, 0.13);
+            border-radius: 7px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -28,6 +28,13 @@ module.exports = {
     "react/no-array-index-key": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
     quotes: ["error", "double"],
     "import/order":
         [
