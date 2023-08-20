@@ -42,7 +42,7 @@ const VaccinationGotEasier = () => {
         </div>
 
         <div className="vaccine-block">
-          <img src={vaccine} alt="vaccine" />
+          <img src={vaccine} alt="vaccine" className="vaccine-block-img" />
           <div className="vaccine-viruses">
             <img src={virus} alt="scientist" />
             <img src={virus} alt="virus" />

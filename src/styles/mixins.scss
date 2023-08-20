@@ -1,0 +1,19 @@
+@use "./variables";
+
+@mixin theme-btn(
+  $color: white, $padding: 15px, $background:variables.$ocean-color, $border: 1px solid rgb(211 211 211 / 22%), $hover-bg: rgb(211 211 211 / 13%))
+{
+  color: $color;
+  padding: $padding;
+  background: $background;
+  border-radius: 20px;
+  border: $border;
+  transition: background 0.4s, filter 0.4s;
+
+  &:hover {
+    cursor: pointer;
+    transition: 0.4s;
+    filter: brightness(1.5);
+    background: $hover-bg;
+  }
+}

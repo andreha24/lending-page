@@ -1,15 +1,15 @@
-@import "src/styles/variables";
+@use "src/styles/variables";
+@import "src/styles/mixins";
 
 .introduction {
-  background-image: $bg-image;
+  background-image: variables.$bg-image;
   width: 100%;
-  color: $main-text-color;
+  color: variables.$main-text-color;
   background-size: cover;
 
-  .logo-block {
+  .logo {
     position: relative;
     cursor: pointer;
-    padding: 8px 0;
 
     &:after {
       content: "";
@@ -18,7 +18,7 @@
       left: 0;
       width: 0;
       height: 3px;
-      background-color: $ocean-color;
+      background-color: variables.$ocean-color;
       transition: width .5s;
     }
 
@@ -29,20 +29,38 @@
 }
 
 .introduction-info-container{
-  padding: $padding-middle-block;
-  margin: $margin-middle-block;
+  padding: variables.$padding-middle-block;
+  margin: variables.$margin-middle-block;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   $width: 45%;
+  flex-wrap: wrap;
+
+  @media (min-width: 1250px){
+    justify-content: space-between;
+  }
 
   .introduction-info{
     width: $width;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    flex-basis: content;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 1250px) {
+      flex-basis: unset;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    span, div{
+      padding: 1rem 0;
+    }
 
     span:first-child{
-      color: $ocean-color;
+      color: variables.$ocean-color;
     }
 
     .introduction-phrase{
@@ -51,12 +69,12 @@
       }
 
       span{
-        color: $ocean-color;
+        color: variables.$ocean-color;
       }
     }
 
     .introduction-info-help{
-      color: $grey-color;
+      color: variables.$grey-color;
     }
 
     .introduction-btns{
@@ -65,6 +83,15 @@
 
       button:first-child{
         margin-right: 20px;
+      }
+
+      .get-vaccine-btn{
+        @include theme-btn(white, 15px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
+        text-shadow: 2px 2px 1px #10101070;
+      }
+
+      .help-btn{
+        @include theme-btn(white, 15px, rgba(211, 211, 211, 0.16), 2px solid variables.$ocean-color);
       }
     }
   }
@@ -75,23 +102,48 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    //background-image: url("assets/vaccine-container.png");
+    flex-basis: content;
+
+    @media (min-width: 1250px) {
+      flex-basis: unset;
+    }
+
+    .vaccine-block-img{
+      width: 100%;
+    }
 
     .vaccine-viruses{
       position: absolute;
       width: 110%;
       justify-content: space-between;
       display: flex;
+
+      img{
+        width: 25%;
+        height: 25%;
+      }
     }
 
     .doctors{
       position: absolute;
-      left: -35px;
       bottom: -35px;
       display: flex;
       background: rgba(211, 211, 211, 0.16);
       padding: 1rem;
       border-radius: 20px;
+      width: 65%;
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+
+      @media (min-width: 768px) {
+        left: -35px;
+        flex-wrap: nowrap;
+      }
+
+      img{
+        width: 80%;
+      }
 
       div{
         display: flex;
@@ -99,8 +151,17 @@
         padding-left: 1rem;
         justify-content: space-evenly;
 
+        span{
+          font-size: 14px;
+        }
+        @media (min-width: 768px) {
+          span{
+            font-size: 20px;
+          }
+        }
+
         span:last-child{
-          color: $ocean-color;
+          color: variables.$ocean-color;
         }
       }
     }
@@ -109,13 +170,17 @@
 
 
 .schedule-container{
-  padding: $padding-middle-block;
-  margin: $margin-middle-block;
+  padding: variables.$padding-middle-block;
+  margin: variables.$margin-mobile;
+
+  @media (min-width: 768px) {
+    margin: variables.$margin-middle-block;
+  }
 
   img{
     padding: 0.5rem;
     border-radius: 8px;
-    background-color: $img-bg-color;
+    background-color: variables.$img-bg-color;
   }
 
   .schedule-introduction{
@@ -129,28 +194,47 @@
   }
 
   .schedule-reg{
-    background: $img-bg-color;
-    padding: $padding-into-block;
+    background: variables.$img-bg-color;
+    padding: variables.$padding-into-block;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    border-radius: 20px;
+    justify-content: center;
 
     .schedule-reg-form{
       display: flex;
-      width: 100%;
-      justify-content: space-evenly;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 90%;
+      align-items: center;
+      flex-direction: column;
 
+      @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      
       .schedule-reg-block{
         display: flex;
         align-items: center;
-        padding: 0 5px;
+        flex-direction: column;
+        padding: 10px 0;
+        text-align: center;
+
+        @media (min-width: 500px) {
+          padding: 10px 5px;
+          flex-direction: row;
+        }
+
+        @media (min-width: 1250px) {
+          padding: 0 5px;
+        }
 
         div{
           display: flex;
           flex-direction: column;
           padding: 0 15px;
-          color:$grey-color;
+          color: variables.$grey-color;
 
           input{
             margin-top: 5px;
@@ -159,6 +243,15 @@
             border-radius: 7px;
             color: white;
           }
+        }
+      }
+
+      .reg-btn{
+        @include theme-btn(white, 15px 25px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
+        margin-top: 25px;
+
+        @media (min-width: 1250px) {
+          margin: 0;
         }
       }
     }

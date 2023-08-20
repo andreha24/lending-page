@@ -1,9 +1,16 @@
 @import "src/styles/variables";
+
 .navigation-block {
-  display: flex;
+  display: none;
   list-style-type: none;
   width: 40%;
   justify-content: space-between;
+
+  @media  (min-width: 1250px) {
+    .navigation-block{
+      display: flex;
+    }
+  }
 
   li {
     display: block;
@@ -31,5 +38,11 @@
       opacity: 1;
       color: white;
     }
+  }
+
+  .close-menu{
+    position: absolute;
+    right: 25px;
+    top: 15px;
   }
 }

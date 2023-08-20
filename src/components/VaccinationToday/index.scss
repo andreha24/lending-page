@@ -1,4 +1,5 @@
 @import "src/styles/variables";
+@import "src/styles/mixins";
 
 .vaccination-today-container{
   background-image: $bg-image;
@@ -44,6 +45,10 @@
               border-color:$ocean-color;
             }
           }
+        }
+
+        .check-vaccine-btn{
+          @include theme-btn($ocean-color, 15px 35px, rgba(211, 211, 211, 0.16), 2px solid $ocean-color);
         }
       }
 

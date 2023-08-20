@@ -12,25 +12,24 @@ import "./index.scss";
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
+  const closeMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
+
   return (
     <header>
-      <div className="logo-block">
-        <img src={logo} alt="logo" />
-      </div>
+      <img src={logo} alt="logo" className="logo" />
       <CSSTransition
         in={showMenu}
-        timeout={300}
-        classNames="burger-menu"
+        timeout={600}
+        classNames="menu-animation"
+        unmountOnExit
       >
-        <Navigation />
+        <Navigation isOpen={showMenu} closeMenu={closeMenu} className="burger-menu" />
       </CSSTransition>
+      <Navigation isOpen={showMenu} closeMenu={closeMenu} className="navigation-block" />
       <Button className="check-status-btn" title="Check Status" type="button" />
-      <div className="burger-menu-wrap">
-        <BurgerMenuIcon onClick={() => setShowMenu((prev) => !prev)} />
-        {/* <button type="button" onClick={() => setShowMenu(false)}> */}
-        {/*  closeeeee */}
-        {/* </button> */}
-      </div>
+      <BurgerMenuIcon onClick={() => setShowMenu((prev) => !prev)} />
     </header>
   );
 };

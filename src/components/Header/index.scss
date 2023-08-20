@@ -1,73 +1,81 @@
 @import "src/styles/variables";
-@import "src/components/Button/index";
+@import "src/styles/mixins";
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: $padding-middle-block;
-  margin: 0 3rem;
   position: relative;
+  margin: $margin-mobile;
 
-  .burger-menu-wrap{
+  @media (min-width: 768px){
+    margin: 0 3rem;
+  }
+
+  .check-status-btn{
     display: none;
+    @include theme-btn($ocean-color, 15px, rgba(211, 211, 211, 0.16), 1px solid rgb(211 211 211 / 22%));
+
+    @media (min-width: 1250px) {
+      display: block;
+    }
+  }
+
+  .burger-menu{
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    left: 0;
+
+    li{
+      margin: 1rem;
+    }
+
+    @media (min-width: 1250px){
+      display: none;
+    }
   }
 
   svg{
-    display: none;
-  }
-}
+    display: block;
+    transition: opacity 0.3s;
 
-.check-status-btn {
-  @include theme-btn($ocean-color, 15px, rgba(211, 211, 211, 0.16), 1px solid rgb(211 211 211 / 22%));
-}
-
-@media screen and (max-width: 1250px) {
-  header{
-    padding: 0;
-    margin: 0;
-
-    .navigation-block{
-      width: 100%;
-      justify-content: space-between;
-      position: absolute;
-      top: 0;
-      z-index: 1;
-      flex-direction: column;
-      align-items: center;
-      background-color: #000;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.5;
     }
 
-    button{
+    @media (min-width: 1250px){
       display: none;
     }
-
-    svg{
-      display: block;
-      transition: opacity 0.3s;
-
-      &:hover{
-        cursor: pointer;
-        opacity: 0.5;
-      }
-    }
   }
 
-  .burger-menu-enter {
-    opacity: 0;
-    transform: scale(0.9);
+  .menu-animation-enter {
+    max-height: 0;
   }
-  .burger-menu-enter-active {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 300ms, transform 300ms;
+
+  .menu-animation-enter-active {
+    max-height: 1000px; // Значение должно быть достаточно большим, чтобы содержимое поместилось
+    transition: max-height 0.6s ease-in-out;
   }
-  .burger-menu-exit {
-    opacity: 1;
+
+  .menu-animation-exit {
+    max-height: 1000px; // Также, значение должно быть достаточно большим
   }
-  .burger-menu-active {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 300ms, transform 300ms;
+
+  .menu-animation-exit-active {
+    max-height: 0;
+    transition: max-height 0.6s ease-in-out;
   }
 }
+
+
+
