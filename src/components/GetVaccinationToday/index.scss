@@ -76,14 +76,26 @@
   }
 }
 
-.PhoneInputCountry{
-  width: 10%;
+.PhoneInput{
+  display: flex;
+  gap: 15px;
 }
-.PhoneInputCountryIcon > svg{
+
+.PhoneInputCountry{
+  display: flex;
+  align-items: center;
+  width: 10%;
+  position: relative;
+}
+
+.PhoneInputCountryIcon > img{
   width: 30px;
   height: 30px;
 }
-.PhoneInputCountrySelectArrow{
-  width: 10px;
-  height: 10px;
+
+.PhoneInputCountrySelect{
+  width: 20px;
+  position: absolute;
+  right: 0;
+  border: 0;
 }

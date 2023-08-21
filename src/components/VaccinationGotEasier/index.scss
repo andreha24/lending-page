@@ -30,11 +30,14 @@
 
 .introduction-info-container{
   padding: variables.$padding-middle-block;
-  margin: variables.$margin-middle-block;
   display: flex;
   justify-content: center;
   $width: 45%;
   flex-wrap: wrap;
+
+  @media (min-width: 500px) {
+    margin: variables.$margin-middle-block;
+  }
 
   @media (min-width: 1250px){
     justify-content: space-between;
@@ -171,7 +174,7 @@
 
 .schedule-container{
   padding: variables.$padding-middle-block;
-  margin: variables.$margin-mobile;
+  margin-top: 40px;
 
   @media (min-width: 768px) {
     margin: variables.$margin-middle-block;
@@ -213,6 +216,10 @@
         flex-direction: row;
         justify-content: space-between;
       }
+
+      @media (min-width: 1250px) {
+        justify-content: space-evenly;
+      }
       
       .schedule-reg-block{
         display: flex;
@@ -227,7 +234,7 @@
         }
 
         @media (min-width: 1250px) {
-          padding: 0 5px;
+          padding: 10px 5px;
         }
 
         div{
@@ -235,6 +242,14 @@
           flex-direction: column;
           padding: 0 15px;
           color: variables.$grey-color;
+
+          @media (min-width: 500px) {
+            text-align: left;
+          }
+
+          @media (min-width: 768px) {
+            padding: 0 0 0 15px;
+          }
 
           input{
             margin-top: 5px;
@@ -248,7 +263,7 @@
 
       .reg-btn{
         @include theme-btn(white, 15px 25px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
-        margin-top: 25px;
+        margin-top: 20px;
 
         @media (min-width: 1250px) {
           margin: 0;

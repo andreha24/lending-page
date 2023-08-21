@@ -9,8 +9,11 @@
 
   .check-result-wrapper{
     padding:$padding-middle-block;
-    margin:$margin-middle-block;
     font-weight: bold;
+
+    @media (min-width: 768px) {
+      margin:$margin-middle-block;
+    }
 
     .check-result{
       border-radius: 8px;
@@ -21,21 +24,49 @@
         width: 100%;
         display: block;
         background: $semi-transparent-bg;
-        padding:1.5rem 3rem;
+        padding: 0.5rem 0.5rem;
+        text-align: center;
+        font-size: 12px;
+
+        @media (min-width: 500px) {
+          padding:1.5rem 3rem;
+          font-size: 20px;
+        }
       }
 
       .check-form{
-        padding:1.5rem 3rem;
+        padding: 0.5rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @media (min-width: 768px) {
+          padding:1.5rem 3rem;
+        }
 
         div{
           display: flex;
-          justify-content: space-between;
-          padding-bottom: 2rem;
+          justify-content: center;
+          padding: 0 30px 1rem;
+          flex-wrap: wrap;
+          width: 100%;
+
+          @media (min-width: 768px) {
+            justify-content: space-between;
+          }
+
+          @media (min-width: 1250px) {
+            flex-wrap: nowrap;
+            padding: 1rem 0;
+            gap: 15px;
+          }
 
           input{
-            padding: 0 30px;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
             background: transparent;
-            font-size: 30px;
+            font-size: 20px;
             border-radius: 15px;
             border:3px solid rgba(211, 211, 211, 0.16);
             outline: none;
@@ -44,25 +75,44 @@
             &:focus{
               border-color:$ocean-color;
             }
+
+            @media (min-width: 500px) {
+              font-size: 25px;
+            }
+
+            @media (min-width: 1250px) {
+              margin: 0;
+            }
           }
         }
 
         .check-vaccine-btn{
-          @include theme-btn($ocean-color, 15px 35px, rgba(211, 211, 211, 0.16), 2px solid $ocean-color);
+          @include theme-btn($ocean-color, 10px 35px, rgba(211, 211, 211, 0.16), 2px solid $ocean-color);
         }
       }
 
       span:last-child{
-        display: flex;
-        justify-content: center;
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
         background-color: $semi-transparent-bg;
-        padding: 1rem 0;
+        padding: 1rem 5px;
         color:$ocean-color;
         border-radius: 15px;
+
+        @media (min-width: 500px) {
+          font-size: 20px;
+          padding: 1rem 15px;
+        }
 
         a{
           color: inherit;
           padding-left: 5px;
+          font-size: inherit;
+
+          @media (min-width: 500px) {
+            font-size: 20px;
+          }
         }
       }
     }
@@ -70,40 +120,75 @@
 
   .why-today{
     padding:$padding-middle-block;
-    margin:$margin-middle-block;
+    margin:$margin-mobile;
+
+    @media (min-width: 768px) {
+      margin:$margin-middle-block;
+    }
 
     .why-today-intro{
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      span{
+        display: flex;
+        flex-basis: 45%;
+        justify-content: center;
+      }
 
       span:first-child{
         font-size: 45px;
         font-weight: bold;
-        width: 45%;
       }
 
       span:last-child{
         color:$grey-color;
-        width: 43%;
         font-weight: 100;
+        margin-top: 20px;
+
+        @media (min-width: 768px) {
+          margin-top: 0;
+        }
       }
     }
   }
 
   .vaccination-reasons{
     display: flex;
-    justify-content: space-between;
     margin-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 1250px) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
 
     .main-reason{
       width: 35%;
       display: flex;
       flex-direction: column;
       align-items: baseline;
-      padding: 3rem 1.5rem;
       background-color: rgba(211, 211, 211, 0.15);
       border-radius: 50px 150px 50px 50px;
+      flex-basis: content;
+      padding: 1rem 1.5rem;
 
+      @media (min-width: 500px) {
+        padding: 3rem 1.5rem;
+      }
+
+      @media (min-width: 1250px) {
+        flex-basis: auto;
+      }
       img{
         background-color: $semi-transparent-bg;
         border-radius: 15px;
@@ -123,9 +208,18 @@
 
     .secondary-reasons{
       display: flex;
-      justify-content: space-between;
       align-items: flex-end;
       width: 55%;
+      flex-basis: content;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      gap: 50px;
+      justify-content: center;
+
+      @media (min-width: 1250px) {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+      }
 
       div{
         display: flex;

@@ -49,10 +49,11 @@ const GetVaccinationToday = () => {
                       <PhoneInput
                         international
                         countryCallingCodeEditable={false}
-                        onChange={setNumber}
+                        defaultCountry="UA"
                         value={number}
-                        {...input}
+                        onChange={setNumber}
                         placeholder="Phone number"
+                        {...input}
                       />
                       {meta.error && meta.touched && <span>{meta.error}</span>}
                     </div>
