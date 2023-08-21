@@ -12,7 +12,10 @@
   .symptoms-intro{
     text-align: center;
     padding:$padding-middle-block;
-    margin:$margin-middle-block;
+
+    @media (min-width: 768px) {
+      margin:$margin-middle-block;
+    }
 
     div, h2{
       padding:$padding-into-block;
@@ -34,8 +37,7 @@
     }
   }
 
-  img{
-    padding:0 2rem;
-    margin-top: 4rem;
+  .symptoms-detail{
+
   }
 }

@@ -17,7 +17,9 @@ const Symptoms = () => (
       </div>
     </div>
 
-    <img src="/img/symptoms.png" alt="symptoms" />
+    <div className="symptoms-details">
+      <span>sdasd</span>
+    </div>
   </div>
 );
 

@@ -1,8 +1,11 @@
 @import "src/styles/variables";
 
 .slick-slider{
-  padding: $padding-middle-block;
-  margin: $margin-middle-block ;
+
+  @media (min-width: 768px) {
+    padding: $padding-middle-block;
+    margin: $margin-middle-block ;
+  }
 }
 .slick-slide > div {
   margin: 0 15px;
@@ -53,6 +56,7 @@
 
     .feedback-user-info{
       display: flex;
+      text-align: left;
 
       div{
         display: flex;
@@ -63,7 +67,11 @@
         margin-left: 10px;
 
         span:first-child{
-          font-size: 25px;
+          font-size: 20px;
+
+          @media (min-width: 1250px) {
+            font-size: 25px;
+          }
         }
 
         span:last-child{

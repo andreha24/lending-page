@@ -70,8 +70,10 @@ const GetVaccinationToday = () => {
           </div>
         </div>
 
-        <div className="dasdas">
-          <span>[dasd[asd</span>
+        <div className="verify-status-wrapper">
+          <div className="verify-status">
+            <span>sdasds</span>
+          </div>
         </div>
       </div>
     </div>

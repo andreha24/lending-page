@@ -2,15 +2,22 @@
 
 .feedbacks-container{
   background-image: url("../../assets/jarms.png");
-  background-size: auto;
+  background-size: contain;
   background-position: center;
   padding: $padding-middle-block $padding-middle-block 10rem;
   position: relative;
 
+  @media (min-width: 768px) {
+    background-size: auto;
+  }
+
   .feedback-intro{
     text-align: center;
     padding:$padding-middle-block;
-    margin:$margin-middle-block;
+
+    @media (min-width: 768px) {
+      margin:$margin-middle-block;
+    }
 
     .feedback-name{
       color:$ocean-color;

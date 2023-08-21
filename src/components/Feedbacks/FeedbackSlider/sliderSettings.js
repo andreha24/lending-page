@@ -7,7 +7,7 @@ const sliderSettings = {
   initialSlide: 0,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1250,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
@@ -15,16 +15,9 @@ const sliderSettings = {
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 768,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
-      },
-    },
-    {
-      breakpoint: 480,
-      settings: {
+        arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
       },
