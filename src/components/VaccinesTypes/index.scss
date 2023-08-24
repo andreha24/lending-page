@@ -1,7 +1,11 @@
 @import "src/styles/variables";
 
-.slick-track{
-  display: flex;
-  align-items: center;
-  opacity: 0.5 !important;
+.vaccines-type{
+  padding: 1rem;
+
+  .slick-track{
+    display: flex;
+    align-items: center;
+    opacity: 0.5 !important;
+  }
 }
