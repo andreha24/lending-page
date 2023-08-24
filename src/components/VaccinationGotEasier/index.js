@@ -11,7 +11,7 @@ import doctors from "../../assets/doctors.png";
 import "./index.scss";
 
 const VaccinationGotEasier = () => (
-  <div className="introduction" id="top">
+  <div className="introduction" id="home">
     <Header />
 
     <div className="introduction-info-container">

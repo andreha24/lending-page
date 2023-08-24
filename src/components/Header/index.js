@@ -21,7 +21,7 @@ const Header = () => {
       <img src={logo} alt="logo" className="logo" />
       <CSSTransition
         in={showMenu}
-        timeout={600}
+        timeout={500}
         classNames="menu-animation"
         unmountOnExit
       >
