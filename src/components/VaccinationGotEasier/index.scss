@@ -28,7 +28,7 @@
   }
 }
 
-.introduction-info-container{
+.introduction-info-container {
   padding: variables.$padding-middle-block;
   display: flex;
   justify-content: center;
@@ -39,11 +39,11 @@
     margin: variables.$margin-middle-block;
   }
 
-  @media (min-width: 1250px){
+  @media (min-width: 1250px) {
     justify-content: space-between;
   }
 
-  .introduction-info{
+  .introduction-info {
     width: $width;
     display: flex;
     flex-direction: column;
@@ -58,48 +58,48 @@
       text-align: left;
     }
 
-    span, div{
+    span, div {
       padding: 1rem 0;
     }
 
-    span:first-child{
+    span:first-child {
       color: variables.$ocean-color;
     }
 
-    .introduction-phrase{
-      h1, span{
+    .introduction-phrase {
+      h1, span {
         font-size: 2rem;
       }
 
-      span{
+      span {
         color: variables.$ocean-color;
       }
     }
 
-    .introduction-info-help{
+    .introduction-info-help {
       color: variables.$grey-color;
     }
 
-    .introduction-btns{
+    .introduction-btns {
       display: flex;
       justify-content: flex-start;
 
-      button:first-child{
+      button:first-child {
         margin-right: 20px;
       }
 
-      .get-vaccine-btn{
+      .get-vaccine-btn {
         @include theme-btn(white, 15px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
         text-shadow: 2px 2px 1px #10101070;
       }
 
-      .help-btn{
+      .help-btn {
         @include theme-btn(white, 15px, rgba(211, 211, 211, 0.16), 2px solid variables.$ocean-color);
       }
     }
   }
 
-  .vaccine-block{
+  .vaccine-block {
     position: relative;
     width: $width;
     display: flex;
@@ -111,23 +111,23 @@
       flex-basis: unset;
     }
 
-    .vaccine-block-img{
+    .vaccine-block-img {
       width: 100%;
     }
 
-    .vaccine-viruses{
+    .vaccine-viruses {
       position: absolute;
       width: 110%;
       justify-content: space-between;
       display: flex;
 
-      img{
+      img {
         width: 25%;
         height: 25%;
       }
     }
 
-    .doctors{
+    .doctors {
       position: absolute;
       bottom: -35px;
       display: flex;
@@ -144,129 +144,28 @@
         flex-wrap: nowrap;
       }
 
-      img{
+      img {
         width: 80%;
       }
 
-      div{
+      div {
         display: flex;
         flex-direction: column;
         padding-left: 1rem;
         justify-content: space-evenly;
 
-        span{
+        span {
           font-size: 14px;
         }
+
         @media (min-width: 768px) {
-          span{
+          span {
             font-size: 20px;
           }
         }
 
-        span:last-child{
+        span:last-child {
           color: variables.$ocean-color;
-        }
-      }
-    }
-  }
-}
-
-
-.schedule-container{
-  padding: variables.$padding-middle-block;
-  margin-top: 40px;
-
-  @media (min-width: 768px) {
-    margin: variables.$margin-middle-block;
-  }
-
-  img{
-    padding: 0.5rem;
-    border-radius: 8px;
-    background-color: variables.$img-bg-color;
-  }
-
-  .schedule-introduction{
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    span{
-      padding-left: 1rem;
-    }
-  }
-
-  .schedule-reg{
-    background: variables.$img-bg-color;
-    padding: variables.$padding-into-block;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .schedule-reg-form{
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      width: 90%;
-      align-items: center;
-      flex-direction: column;
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      @media (min-width: 1250px) {
-        justify-content: space-evenly;
-      }
-      
-      .schedule-reg-block{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 10px 0;
-        text-align: center;
-
-        @media (min-width: 500px) {
-          padding: 10px 5px;
-          flex-direction: row;
-        }
-
-        @media (min-width: 1250px) {
-          padding: 10px 5px;
-        }
-
-        div{
-          display: flex;
-          flex-direction: column;
-          padding: 0 15px;
-          color: variables.$grey-color;
-
-          @media (min-width: 500px) {
-            text-align: left;
-          }
-
-          @media (min-width: 768px) {
-            padding: 0 0 0 15px;
-          }
-
-          input{
-            margin-top: 5px;
-            background: transparent;
-            border: 1px solid rgba(211, 211, 211, 0.13);
-            border-radius: 7px;
-            color: white;
-          }
-        }
-      }
-
-      .reg-btn{
-        @include theme-btn(white, 15px 25px, variables.$ocean-color, 1px solid rgb(211 211 211 / 22%));
-        margin-top: 20px;
-
-        @media (min-width: 1250px) {
-          margin: 0;
         }
       }
     }

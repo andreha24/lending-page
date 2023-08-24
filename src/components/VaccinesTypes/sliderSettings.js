@@ -1,4 +1,5 @@
 const sliderSettings = {
+  dots: true,
   infinite: true,
   speed: 500,
   autoplaySpeed: 3000,
@@ -12,6 +13,7 @@ const sliderSettings = {
     {
       breakpoint: 1024,
       settings: {
+        dots: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
@@ -20,6 +22,7 @@ const sliderSettings = {
     {
       breakpoint: 600,
       settings: {
+        dots: true,
         slidesToShow: 2,
         slidesToScroll: 1,
         initialSlide: 2,
@@ -28,6 +31,7 @@ const sliderSettings = {
     {
       breakpoint: 480,
       settings: {
+        dots: true,
         slidesToShow: 1,
         slidesToScroll: 1,
       },

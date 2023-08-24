@@ -1,14 +1,12 @@
 @import "src/styles/variables";
 @import "src/styles/mixins";
 
-.get-vaccine-today-container{
-  padding:$padding-middle-block;
 
-  .vaccine-today-wrapper{
+.vaccine-today-wrapper{
     display: flex;
-    //justify-content: space-between;
     justify-content: center;
     flex-wrap: wrap;
+    padding:$padding-middle-block;
 
     @media (min-width: 768px) {
       margin:$margin-middle-block;
@@ -16,6 +14,7 @@
 
     @media (min-width: 1250px){
       flex-wrap: nowrap;
+      justify-content: space-between;
     }
 
     .vaccine-today-form-wrapper{
@@ -23,10 +22,11 @@
       flex-basis: content;
       flex-direction: column;
       text-align: center;
-      //width: 100%;
+      width: 45%;
 
       @media (min-width: 1250px) {
         text-align: left;
+        flex-basis: unset;
       }
 
       .vaccination-today-intro{
@@ -118,19 +118,48 @@
 
     .verify-status-wrapper{
       background-color: #0B153C;
-      width: 45%;
+      width: 35%;
       margin-top: 50px;
-
+      border-radius: 30px;
+      color: $main-text-color;
+      overflow: hidden;
+      
       @media (min-width: 1250px) {
         margin-top: 0;
       }
 
-      .verify-status{
+      .verify-status-container{
         background-image: url("../../assets/take-vaccine-from-jarm.svg");
         background-size: cover;
         width: 100%;
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        
+        .coronavirus{
+          position: absolute;
+          top: -30px;
+          left: -30px;
+        }
+        
+        .verify-status{
+          height: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-weight: bold;
+          align-items: center;
+
+          span{
+            white-space: pre-line;
+          }
+
+          .verify-status-btn{
+            @include theme-btn(white, 15px 50px, $semi-transparent-bg, 0, rgba(211, 211, 211, 0.34))
+          }
+        }
       }
     }
-  }
 }

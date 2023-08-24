@@ -3,21 +3,25 @@ import Slider from "react-slick";
 
 import sliderSettings from "./sliderSettings";
 
+import moderna from "../../assets/vaccines-type/moderna.svg";
+import pfizer from "../../assets/vaccines-type/pfizer.svg";
+import astraZeneca from "../../assets/vaccines-type/astra-zeneca.svg";
+import sinovac from "../../assets/vaccines-type/sinovac.svg";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.scss";
 
-const VaccinesTypeSlider = () => (
-  <Slider {...sliderSettings}>
-    <img src="/img/moderna.png" alt="vaccine" />
-    <img src="/img/pfizer.png" alt="vaccine" />
-    <img src="/img/astra-zeneca.png" alt="vaccine" />
-    <img src="/img/sinovac.png" alt="vaccine" />
-    <img src="/img/moderna.png" alt="vaccine" />
-    <img src="/img/pfizer.png" alt="vaccine" />
-    <img src="/img/astra-zeneca.png" alt="vaccine" />
-    <img src="/img/sinovac.png" alt="vaccine" />
-  </Slider>
-);
+const VaccinesTypeSlider = () => {
+  const vaccineImages = [moderna, pfizer, astraZeneca, sinovac];
+
+  return (
+    <Slider {...sliderSettings}>
+      {vaccineImages.map((elem, index) => (
+        <img src={elem} key={index} alt="vaccine" />
+      ))}
+    </Slider>
+  );
+};
 
 export default VaccinesTypeSlider;

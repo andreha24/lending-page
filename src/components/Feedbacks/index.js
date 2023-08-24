@@ -3,6 +3,8 @@ import { Field, Form } from "react-final-form";
 
 import FeedbackSlider from "./FeedbackSlider";
 
+import { ReactComponent as SendMail } from "../../assets/send.svg";
+
 import "./index.scss";
 
 const Feedbacks = () => {
@@ -35,13 +37,13 @@ const Feedbacks = () => {
               <form onSubmit={handleSubmit}>
                 <Field name="email">
                   {({ input, meta }) => (
-                    <div>
-                      <input {...input} />
-                      <label htmlFor="email">
-                        <img src="" alt="send-message" />
-                      </label>
+                    <>
+                      <input {...input} placeholder="your email" />
+                      <div>
+                        <SendMail type="button" />
+                      </div>
                       {meta.error && meta.touched && <span>{meta.error}</span>}
-                    </div>
+                    </>
                   )}
                 </Field>
               </form>

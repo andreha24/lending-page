@@ -18,7 +18,7 @@ const Symptoms = () => (
     </div>
 
     <div className="symptoms-details">
-      <span>sdasd</span>
+      <span>dapsdaspd</span>
     </div>
   </div>
 );
