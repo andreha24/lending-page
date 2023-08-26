@@ -1,5 +1,67 @@
 @import "src/styles/variables";
 
+@mixin symptom-view($width: 100%){
+    display: flex;
+    width: $width;
+    justify-content: space-between;
+    margin: 30px 0;
+
+    .symptom-info{
+      display: flex;
+      position: relative;
+      align-items: center;
+      background-color:$semi-transparent-bg;
+      margin: 5px;
+      border-radius: 10px;
+      padding: 5px;
+      text-align: center;
+      width: 120px;
+      justify-content: center;
+
+      @media (min-width: 500px) {
+        width: 180px;
+      }
+
+      @media (min-width: 768px) {
+        width: 220px;
+        height: 58px;
+      }
+
+      svg{
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: -18px;
+        
+        @media (min-width: 500px) {
+          width: 40px;
+          height: 40px;
+          left: -20px;
+        }
+
+        @media (min-width: 768px) {
+          width: 50px;
+          height: 50px;
+          left: -20px;
+        }
+      }
+
+      span{
+        font-size: 12px;
+        margin-left: 5px;
+        color: $ocean-color;
+        
+        @media (min-width: 500px) {
+          font-size: 17px;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 20px;
+        }
+      }
+    }
+}
+
 .symptoms-container{
   display: flex;
   flex-direction: column;
@@ -7,7 +69,17 @@
   background-size: cover;
   color: white;
   padding-top: 3rem;
-  background-image:$bg-image;
+  background: bottom center url("../../assets/headache.svg") no-repeat, $bg-image no-repeat;
+  background-size: contain, cover;
+
+  @media (min-width: 500px) {
+    background-size: 400px, cover;
+  }
+
+  @media (min-width: 768px) {
+    align-items: center;
+    background-size: 600px, cover;
+  }
 
   .symptoms-intro{
     text-align: center;
@@ -39,7 +111,35 @@
 
   .symptoms-details{
     padding: $padding-middle-block;
-    background-image: url("../../assets/headache.svg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    @media (min-width: 768px) {
+      width: 90%;
+    }
+
+    @media (min-width: 1250px) {
+      width: 70%;
+    }
+
+    .symptoms-first {
+      @include symptom-view;
+
+      @media (min-width: 768px) {
+        width: 80%;
+      }
+    }
+
+    .symptoms-seconds {
+      @include symptom-view;
+      @media (min-width: 768px) {
+        width: 90%;
+      }
+    }
+
+    .symptoms-third {
+      @include symptom-view;
+    }
   }
 }

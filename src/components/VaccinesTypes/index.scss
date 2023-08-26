@@ -1,17 +1,18 @@
 @import "src/styles/variables";
 
 .vaccines-type{
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
+  margin: 1rem 0;
+  justify-content: space-between;
+  align-items: center;
 
-  .slick-track{
+  &__wrapper {
     display: flex;
     align-items: center;
-    opacity: 0.5 !important;
+    gap: 85px;
+    opacity: 0.5;
   }
 
-  .slick-dots{
-    bottom: 0;
+  .marquee{
+    align-items: center;
   }
 }

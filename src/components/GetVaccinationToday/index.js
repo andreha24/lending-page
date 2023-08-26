@@ -75,6 +75,7 @@ const GetVaccinationToday = () => {
           <div className="verify-status">
             <span>
               COVID-19
+              {"\n"}
               Vaccine
             </span>
             <Button className="verify-status-btn" type="button" title="Verify Status" />

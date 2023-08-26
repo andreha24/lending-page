@@ -1,5 +1,9 @@
 import React from "react";
 
+import symptomsInfo from "./symptomsInfo";
+
+import { ReactComponent as Virus } from "../../assets/coronavirus.svg";
+
 import "./index.scss";
 
 const Symptoms = () => (
@@ -18,7 +22,16 @@ const Symptoms = () => (
     </div>
 
     <div className="symptoms-details">
-      <span>dapsdaspd</span>
+      {symptomsInfo.map(({ wrapperClassName, childClassName, children }, index) => (
+        <div className={wrapperClassName} key={index}>
+          {children.map((elem) => (
+            <div className={childClassName}>
+              <Virus />
+              <span>{ elem }</span>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   </div>
 );

@@ -7,6 +7,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding:$padding-middle-block;
+  align-items: center;
 
     @media (min-width: 768px) {
       margin:$margin-middle-block;
@@ -118,30 +119,45 @@
 
     .verify-status-wrapper{
       background-color: #0B153C;
-      width: 35%;
+      min-width: 300px;
       margin-top: 50px;
       border-radius: 30px;
-      color: $main-text-color;
-      overflow: hidden;
-      
-      @media (min-width: 1250px) {
+      color: white;
+      height: 500px;
+      background-image: url("../../assets/take-vaccine-from-jarm.svg");
+      background-size: contain;
+      background-position: left bottom;
+
+      @media (min-width: 500px) {
+        background-size: cover;
+        min-width: 400px;
+      }
+
+      @media (min-width: 1250px){
         margin-top: 0;
       }
 
       .verify-status-container{
-        background-image: url("../../assets/take-vaccine-from-jarm.svg");
-        background-size: cover;
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        border-radius: inherit;
         
         .coronavirus{
           position: absolute;
           top: -30px;
-          left: -30px;
+          left: -15px;
+          width: 75px;
+          height: 75px;
+
+          @media (min-width: 500px){
+            width: auto;
+            height: auto;
+            left: -30px;
+          }
         }
         
         .verify-status{
@@ -154,6 +170,7 @@
 
           span{
             white-space: pre-line;
+            text-align: center;
           }
 
           .verify-status-btn{
